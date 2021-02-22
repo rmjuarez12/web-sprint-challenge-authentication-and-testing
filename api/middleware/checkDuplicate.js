@@ -2,7 +2,6 @@ module.exports = (authModel) => (req, res, next) => {
   const { username } = req.body;
 
   authModel.getUserBy("username", username).then((user) => {
-    console.log(user);
     if (!user) {
       next();
     } else {
